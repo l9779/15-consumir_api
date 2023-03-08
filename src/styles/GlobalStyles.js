@@ -21,7 +21,7 @@ button {
   cursor: pointer;
   background-color: ${colors.primaryColor};
   border: none;
-  color: #fff;
+  color: #fcfcfc;
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: 700;
@@ -53,7 +53,7 @@ ul {
 
 export const Container = styled.section`
   max-width: 480px;
-  background-color: #fff;
+  background-color: #fcfcfc;
   margin: 30px auto;
   padding: 30px;
   border-radius: 4px;

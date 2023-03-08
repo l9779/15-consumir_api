@@ -14,7 +14,7 @@ function* loginRequest({ payload }) {
 
     toast.success("Login efetuado com sucesso.");
 
-    axios.defaults.headers.Authoriztion = `Bearer ${response.data.token}`;
+    axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
     history.push(payload.prevPath);
   } catch (e) {
     toast.error("Usuário ou senha iválidos.");
@@ -26,7 +26,7 @@ function* loginRequest({ payload }) {
 function persistRehydrate({ payload }) {
   const token = get(payload, "auth-token", "");
   if (!token) return;
-  axios.defaults.headers.Authoriztion = `Bearer ${token}`;
+  axios.defaults.headers.Authorization = `Bearer ${token}`;
 }
 
 export default all([
