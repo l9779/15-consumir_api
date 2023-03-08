@@ -40,5 +40,6 @@ module.exports = {
     "default-param-last": "off",
     "no-unused-vars": "warn",
     "react/jsx-no-bind": "off",
+    "react/jsx-no-useless-fragment": "off",
   },
 };

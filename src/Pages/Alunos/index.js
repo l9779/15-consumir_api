@@ -6,18 +6,18 @@ import { FaUserCircle, FaEdit, FaWindowClose } from "react-icons/fa";
 import { Container } from "../../styles/GlobalStyles";
 import { AlunoContainer, ProfilePicture } from "./styled";
 import axios from "../../services/axios";
+import Loading from "../../Components/Loading";
 
 export default function Alunos() {
   const [alunos, setAlunos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getData() {
-      try {
-        const response = await axios.get("/alunos");
-        setAlunos(response.data);
-      } catch (err) {
-        console.log(err);
-      }
+      setIsLoading(true);
+      const response = await axios.get("/alunos");
+      setAlunos(response.data);
+      setIsLoading(false);
     }
 
     getData();
@@ -25,6 +25,8 @@ export default function Alunos() {
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
+
       <h1>Alunos</h1>
       <AlunoContainer>
         {alunos.map((aluno) => {
