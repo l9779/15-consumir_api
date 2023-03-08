@@ -39,5 +39,6 @@ module.exports = {
     "import/prefer-default-export": "off",
     "default-param-last": "off",
     "no-unused-vars": "warn",
+    "react/jsx-no-bind": "off",
   },
 };
